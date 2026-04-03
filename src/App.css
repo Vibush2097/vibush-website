@@ -1,35 +1,42 @@
 :root{
-  --bg:#0f1724;
+  /* Palette tuned to a “dark + neon accent” profile */
+  --bg:#05070b;
   --card:#0b1220;
-  --muted:#9aa6bd;
-  --accent:#7dd3fc;
-  --text:#e6eef8;
+  --muted:#a1a1aa;
+  --text:#f8fafc;
+  --accent:#22c55e; /* emerald */
 
-  /* Section theme: arctic night — one hue family, distinct per section */
-  --hero-gradient: linear-gradient(145deg, #0b1220 0%, #0f1c2e 42%, #0d1828 100%);
-  --section-about-from: #0e1624;
-  --section-about-to: #0c1420;
-  --accent-about: #93c5fd;
+  /* Subtle section shifts (same theme, slightly different lifts) */
+  --hero-gradient: radial-gradient(900px circle at 50% 20%, rgba(34, 197, 94, 0.12), transparent 55%),
+    linear-gradient(180deg, #05070b 0%, #060a10 65%, #05070b 100%);
 
-  --section-experience-from: #0c1a24;
-  --section-experience-to: #0e1c28;
-  --accent-experience: #5eead4;
+  --section-about-from: #05070b;
+  --section-about-to: #070b12;
+  --accent-about: #22c55e;
 
-  --section-projects-from: #101828;
-  --section-projects-to: #0c1522;
-  --accent-projects: #a78bfa;
+  --section-experience-from: #05070b;
+  --section-experience-to: #070d12;
+  --accent-experience: #34d399; /* green-teal */
 
-  --section-skills-from: #0d1c26;
-  --section-skills-to: #0b1822;
-  --accent-skills: #7dd3fc;
+  --section-projects-from: #05070b;
+  --section-projects-to: #070b10;
+  --accent-projects: #22c55e;
 
-  --section-education-from: #0f1826;
-  --section-education-to: #0c1420;
-  --accent-education: #38bdf8;
+  --section-skills-from: #05070b;
+  --section-skills-to: #070c12;
+  --accent-skills: #86efac; /* lighter green */
 
-  --section-contact-from: #0a121c;
-  --section-contact-to: #081018;
-  --accent-contact: #7dd3fc;
+  --section-education-from: #05070b;
+  --section-education-to: #070b12;
+  --accent-education: #4ade80;
+
+  --section-contact-from: #05070b;
+  --section-contact-to: #060a10;
+  --accent-contact: #22c55e;
+
+  --section-hobbies-from: #05070b;
+  --section-hobbies-to: #07100b;
+  --accent-hobbies: #34d399;
 }
 
 *{box-sizing:border-box}
@@ -37,7 +44,8 @@ html,body,#root{height:100%}
 body{
   margin:0;
   font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  background:linear-gradient(180deg,var(--bg),#071027);
+  background: radial-gradient(900px circle at 50% 0%, rgba(34, 197, 94, 0.08), transparent 55%),
+    linear-gradient(180deg, var(--bg), #04060a);
   color:var(--text);
   -webkit-font-smoothing:antialiased;
 }

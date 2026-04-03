@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import './App.css';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
@@ -6,10 +6,43 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Education from './components/Education';
+import Hobbies from './components/Hobbies';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
+  useEffect(() => {
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion) return undefined;
+
+    const targets = Array.from(document.querySelectorAll("[data-animate]"));
+
+    if (!("IntersectionObserver" in window)) {
+      targets.forEach((el) => el.classList.add("is-visible"));
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        }
+      },
+      { root: null, rootMargin: "0px 0px -10% 0px", threshold: 0.08 }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   // Portfolio projects
   const projects = [
     {
@@ -51,12 +84,12 @@ function App() {
       <main className="site-content">
         <About />
         <Experience />
-        <section id="projects" className="section section-projects">
+        <section id="projects" className="section section-projects" data-animate="section">
           <div className="container">
             <h2>Projects</h2>
             <div className="projects-grid">
               {projects.map((p, i) => (
-                <article className="project-card" key={i}>
+                <article className="project-card" key={i} data-animate="card">
                   <h3>{p.title}</h3>
                   <p>{p.description}</p>
                   <p className="project-tools">{p.tools}</p>
@@ -67,6 +100,7 @@ function App() {
         </section>
         <Skills />
         <Education />
+        <Hobbies />
         <Contact />
       </main>
       <Footer />

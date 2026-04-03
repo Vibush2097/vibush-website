@@ -18,16 +18,16 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="section section-skills">
+    <section id="skills" className="section section-skills" data-animate="section">
       <div className="container">
         <h2>Skills</h2>
         <div className="skills-grid">
           {skillCategories.map((cat, idx) => (
-            <div key={idx} className="skill-category">
+            <div key={idx} className="skill-category" data-animate="card">
               <h4>{cat.category}</h4>
               <div className="skill-tags">
                 {cat.items.map((item, i) => (
-                  <span key={i} className="skill-tag">
+                  <span key={i} className="skill-tag" data-animate="chip">
                     {item}
                   </span>
                 ))}

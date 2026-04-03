@@ -3,7 +3,7 @@ import "./layout.css";
 
 export default function Contact() {
   return (
-    <section id="contact" className="section section-contact contact">
+    <section id="contact" className="section section-contact contact" data-animate="section">
       <div className="container">
         <h2>Contact</h2>
         <p>

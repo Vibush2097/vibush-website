@@ -36,7 +36,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="section section-about">
+    <section id="about" className="section section-about" data-animate="section">
       <div className="container">
         <h2>About</h2>
         <p className="lead">
@@ -48,7 +48,7 @@ export default function About() {
         <h3 className="about-impact-heading">Impact at a glance</h3>
         <ul className="about-impact-list">
           {impacts.map((item) => (
-            <li key={item.label}>
+            <li key={item.label} data-animate="card">
               <span className="about-impact-label">{item.label}</span>
               <ul className="about-impact-points">
                 {item.points.map((point, i) => (

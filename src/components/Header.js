@@ -4,9 +4,9 @@ import portfolioImage from "../assets/images/portfolio-image.jpg"
 
 export default function Header() {
   return (
-    <section id="intro" className="hero">
+    <section id="intro" className="hero" data-animate="hero">
       <div className="container">
-        <div className="hero-content">
+        <div className="hero-content" data-animate="hero-content">
           <img
             src={portfolioImage}
             alt="Vibush Shanmugam"

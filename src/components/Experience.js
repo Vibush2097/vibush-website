@@ -47,12 +47,12 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="section section-experience">
+    <section id="experience" className="section section-experience" data-animate="section">
       <div className="container">
         <h2>Experience</h2>
         <div className="experience-list">
           {experiences.map((exp, idx) => (
-            <div key={idx} className="experience-card">
+            <div key={idx} className="experience-card" data-animate="card">
               <div className="exp-header">
                 <h3>{exp.company}</h3>
                 <p className="exp-period">{exp.period}</p>

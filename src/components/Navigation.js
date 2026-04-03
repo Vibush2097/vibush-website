@@ -33,6 +33,9 @@ export default function Navigation() {
           <a href="#education" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
             Education
           </a>
+          <a href="#hobbies" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
+            Hobbies
+          </a>
           <a href="#contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
             Contact
           </a>
