@@ -51,7 +51,7 @@ function App() {
       <main className="site-content">
         <About />
         <Experience />
-        <section id="projects" className="section">
+        <section id="projects" className="section section-projects">
           <div className="container">
             <h2>Projects</h2>
             <div className="projects-grid">

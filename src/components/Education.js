@@ -20,7 +20,7 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="section">
+    <section id="education" className="section section-education">
       <div className="container">
         <h2>Education</h2>
         <div className="education-list">

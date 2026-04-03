@@ -1,11 +1,13 @@
-/* NAVBAR */
+/* NAVBAR — matches page base */
 .navbar {
-  background: rgba(0, 0, 0, 0.95);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 0;
   position: sticky;
   top: 0;
   z-index: 999;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .navbar-container {
@@ -46,7 +48,7 @@
 }
 
 .nav-link:hover {
-  color: #fff;
+  color: var(--accent);
 }
 
 .hamburger {
@@ -73,7 +75,7 @@
     top: 60px;
     left: 0;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.98);
+    background: color-mix(in srgb, var(--bg) 96%, #000);
     width: 100%;
     padding: 1.5rem 0;
     gap: 0;
@@ -94,11 +96,12 @@
 .hero {
   padding: 6rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, rgba(20, 20, 20, 1), rgba(35, 35, 35, 1));
+  background: var(--hero-gradient);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 8%, transparent);
 }
 
 .hero-content {
@@ -111,7 +114,7 @@
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto 2rem;
-  border: 4px solid rgba(255, 255, 255, 0.2);
+  border: 4px solid color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .hero h1 {
@@ -152,23 +155,24 @@
 }
 
 .btn-primary {
-  background: #fff;
-  color: #000;
+  background: var(--accent);
+  color: #0a1018;
 }
 
 .btn-primary:hover {
-  background: #e0e0e0;
+  background: color-mix(in srgb, var(--accent) 88%, #fff);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #fff;
-  border: 1px solid #fff;
+  color: var(--text);
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
 }
 
 .btn-secondary:hover {
-  background: #fff;
-  color: #000;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--text);
+  border-color: var(--accent);
 }
 
 @media (max-width: 768px) {
@@ -189,12 +193,57 @@
 /* SECTIONS */
 .section {
   padding: 4rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 6%, transparent);
 }
 
 .section h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
+  padding-bottom: 0;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: min(5rem, 36%);
+  height: 3px;
+  margin-top: 0.75rem;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--section-heading-accent, var(--accent)),
+    color-mix(in srgb, var(--section-heading-accent, var(--accent)) 15%, transparent)
+  );
+}
+
+.section-about {
+  --section-heading-accent: var(--accent-about);
+  background: linear-gradient(180deg, var(--section-about-from), var(--section-about-to));
+}
+
+.section-experience {
+  --section-heading-accent: var(--accent-experience);
+  background: linear-gradient(180deg, var(--section-experience-from), var(--section-experience-to));
+}
+
+.section-projects {
+  --section-heading-accent: var(--accent-projects);
+  background: linear-gradient(180deg, var(--section-projects-from), var(--section-projects-to));
+}
+
+.section-skills {
+  --section-heading-accent: var(--accent-skills);
+  background: linear-gradient(180deg, var(--section-skills-from), var(--section-skills-to));
+}
+
+.section-education {
+  --section-heading-accent: var(--accent-education);
+  background: linear-gradient(180deg, var(--section-education-from), var(--section-education-to));
+}
+
+.section-contact {
+  --section-heading-accent: var(--accent-contact);
+  background: linear-gradient(180deg, var(--section-contact-from), var(--section-contact-to));
 }
 
 .container {
@@ -204,10 +253,66 @@
 
 .lead {
   font-size: 1.05rem;
-  color: #bbb;
+  color: var(--muted);
   line-height: 1.8;
   margin-bottom: 1.5rem;
   max-width: 900px;
+}
+
+.about-impact-heading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 2rem 0 1rem;
+  letter-spacing: 0.02em;
+}
+
+.about-impact-list {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  max-width: 900px;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.about-impact-list > li {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  border-left: 3px solid color-mix(in srgb, var(--accent-about) 50%, transparent);
+  background: color-mix(in srgb, var(--accent-about) 8%, rgba(255, 255, 255, 0.02));
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 1.02rem;
+}
+
+.about-impact-label {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.65rem;
+  font-size: 0.95rem;
+}
+
+.about-impact-points {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.about-impact-points li {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  line-height: 1.65;
+}
+
+.about-impact-points li:last-child {
+  margin-bottom: 0;
+}
+
+.about-closing {
+  margin-bottom: 0;
 }
 
 /* EXPERIENCE */
@@ -217,10 +322,10 @@
 }
 
 .experience-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: color-mix(in srgb, var(--accent-experience) 6%, rgba(255, 255, 255, 0.02));
   padding: 1.5rem;
   border-radius: 6px;
-  border-left: 3px solid rgba(255, 255, 255, 0.2);
+  border-left: 3px solid color-mix(in srgb, var(--accent-experience) 55%, transparent);
 }
 
 .exp-header {
@@ -273,16 +378,16 @@
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: color-mix(in srgb, var(--accent-projects) 7%, rgba(255, 255, 255, 0.02));
   padding: 1.5rem;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid color-mix(in srgb, var(--accent-projects) 22%, transparent);
   transition: all 0.3s;
 }
 
 .project-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: color-mix(in srgb, var(--accent-projects) 11%, rgba(255, 255, 255, 0.04));
+  border-color: color-mix(in srgb, var(--accent-projects) 45%, transparent);
   transform: translateY(-4px);
 }
 
@@ -324,18 +429,18 @@
 
 .skill-tag {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.08);
+  background: color-mix(in srgb, var(--accent-skills) 10%, rgba(255, 255, 255, 0.04));
   color: #ccc;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid color-mix(in srgb, var(--accent-skills) 22%, transparent);
   transition: all 0.3s;
 }
 
 .skill-tag:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: color-mix(in srgb, var(--accent-skills) 18%, rgba(255, 255, 255, 0.06));
+  border-color: color-mix(in srgb, var(--accent-skills) 45%, transparent);
 }
 
 /* EDUCATION */
@@ -346,10 +451,10 @@
 }
 
 .education-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: color-mix(in srgb, var(--accent-education) 6%, rgba(255, 255, 255, 0.02));
   padding: 1.5rem;
   border-radius: 6px;
-  border-left: 3px solid rgba(255, 255, 255, 0.2);
+  border-left: 3px solid color-mix(in srgb, var(--accent-education) 55%, transparent);
 }
 
 .edu-header {
@@ -394,28 +499,34 @@
   margin-bottom: 2rem;
 }
 
+.contact h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .contact p {
   font-size: 1.1rem;
   margin-bottom: 1rem;
+  color: var(--muted);
 }
 
 .contact a {
-  color: #fff;
+  color: var(--accent-contact);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
 }
 
 .contact a:hover {
-  color: #bbb;
+  color: color-mix(in srgb, var(--accent-contact) 75%, #fff);
 }
 
 /* FOOTER */
 .site-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid color-mix(in srgb, var(--accent) 8%, transparent);
   padding: 2rem;
   text-align: center;
-  color: #888;
+  color: var(--muted);
   font-size: 0.9rem;
 }
 

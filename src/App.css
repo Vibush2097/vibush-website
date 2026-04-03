@@ -4,6 +4,32 @@
   --muted:#9aa6bd;
   --accent:#7dd3fc;
   --text:#e6eef8;
+
+  /* Section theme: arctic night — one hue family, distinct per section */
+  --hero-gradient: linear-gradient(145deg, #0b1220 0%, #0f1c2e 42%, #0d1828 100%);
+  --section-about-from: #0e1624;
+  --section-about-to: #0c1420;
+  --accent-about: #93c5fd;
+
+  --section-experience-from: #0c1a24;
+  --section-experience-to: #0e1c28;
+  --accent-experience: #5eead4;
+
+  --section-projects-from: #101828;
+  --section-projects-to: #0c1522;
+  --accent-projects: #a78bfa;
+
+  --section-skills-from: #0d1c26;
+  --section-skills-to: #0b1822;
+  --accent-skills: #7dd3fc;
+
+  --section-education-from: #0f1826;
+  --section-education-to: #0c1420;
+  --accent-education: #38bdf8;
+
+  --section-contact-from: #0a121c;
+  --section-contact-to: #081018;
+  --accent-contact: #7dd3fc;
 }
 
 *{box-sizing:border-box}
@@ -54,93 +80,6 @@ body{
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-/* Navigation Styles */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #282c34;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.nav-brand a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  margin: 0 1rem;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #61dafb;
-}
-
-/* Hamburger Menu */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 3px 0;
-  transition: 0.3s;
-  border-radius: 2px;
-}
-
-/* Mobile Styles */
-@media screen and (max-width: 768px) {
-  .nav-links {
-    position: fixed;
-    left: -100%;
-    top: 70px;
-    flex-direction: column;
-    background-color: #282c34;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-    padding: 2rem 0;
-  }
-
-  .nav-links.active {
-    left: 0;
-  }
-
-  .nav-links li {
-    margin: 1rem 0;
-  }
-
-  .menu-toggle {
-    display: flex;
   }
 }
 
