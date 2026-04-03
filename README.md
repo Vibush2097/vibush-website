@@ -1,5 +1,43 @@
-# Getting Started with Create React App
+# Vibush Shanmugam Portfolio
 
+## Who I am
+Full Stack Software Engineer with 4+ years of experience shipping production web and desktop software across enterprise IT, energy, and media. I focus on outcomes that help teams move faster, operate more reliably, and deliver measurable business results.
+
+## Key impact highlights
+- Supported revenue and renewal outcomes through customer-facing integrations and platform improvements (including work tied to $1M+ in service contract renewals).
+- Delivered performance gains, including a 100% speedup on a core desktop algorithm and automation that reduces manual evaluation.
+- Provided technical leadership by modernizing legacy systems with a team of five (90%+ code coverage and significant reduction in code footprint).
+- Built and owned scalable services, including six production microservice applications and work across 4,000+ enterprise apps.
+
+## What this webpage is
+This is a React single-page portfolio hosted on GitHub Pages. The layout is designed for fast recruiter scanning:
+- Intro (Hero)
+- About (including “Impact at a glance” points)
+- Experience
+- Projects
+- Skills
+- Education
+- Contact
+
+## Local development
+1. `npm install`
+2. `npm start`
+3. `npm run build`
+
+## Redeploy to GitHub Pages
+```bash
+npm run deploy
+```
+
+This runs a production build and publishes the `build/` output to your GitHub Pages site (via `gh-pages` configured in `package.json`).
+
+## Tech stack
+- React
+- React Router
+- CSS (single `layout.css` theme variables)
+- GitHub Pages publishing via `gh-pages`
+
+<!--
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -68,3 +106,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-->
